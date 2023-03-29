@@ -1,0 +1,9 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /api/node
+
+execution-properties:
+  directory: loadedFiles
+  host: http://localhost
+  manager-url: http://localhost:10000
