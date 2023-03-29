@@ -1,15 +1,16 @@
 package com.kvitka.gridnode.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+@Slf4j
 @Service
 public class JarExecutorService {
 
@@ -36,7 +37,7 @@ public class JarExecutorService {
         if (!result.isEmpty()) {
             process.destroy();
             deleteFiles(tempFiles);
-            System.out.println("(" + new Date() + ")Success! " + args + " " + result);
+            log.info("Subtask execution complete! (Result: {}, arguments: {})", result, args);
             return result;
         }
 
