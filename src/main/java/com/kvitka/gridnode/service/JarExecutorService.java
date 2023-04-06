@@ -26,6 +26,8 @@ public class JarExecutorService {
         List<String> args = new ArrayList<>();
         while (scanner.hasNext()) args.add(scanner.next());
 
+        log.info("Execution is about to be started (args: {})", args);
+
         Process process = Runtime.getRuntime().exec(
                 "java -jar %s %s".formatted(directoryName + "/" + jarName, String.join(" ", args)));
 
